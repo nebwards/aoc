@@ -6,11 +6,11 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 2 {
-        eprintln!("Usage: cargo run -- <day_XX>");
+        eprintln!("Usage: cargo run -- day_<01-12>");
         std::process::exit(1);
     }
 
-    let package_name = &args[1]; // day_XX
+    let package_name = &args[1];
 
     // VALIDATION - package name must be day_<01-12>
 
@@ -57,7 +57,7 @@ fn main() {
 
     match fs::write(&main_rs_path, template_contents) {
         Ok(_) => println!("✓ Overwrote main.rs with template.txt"),
-        Err(err) => eprintln!("Failed to copy template: {}", err),
+        Err(err) => eprintln!("Failed to write template: {}", err),
     }
 
     let input_path = target_dir.join("src").join("input.txt");
@@ -81,7 +81,7 @@ fn main() {
             }
         }
         _ => {
-            eprintln!("Failed to check puzzle availablity")
+            eprintln!("Failed to reqwest puzzle page")
         }
     };
 }

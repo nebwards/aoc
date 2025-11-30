@@ -2,4 +2,4 @@
 **/target/
 
 # Private files e.g. aoc session keys
-**/__ignore__*
+/ignore
