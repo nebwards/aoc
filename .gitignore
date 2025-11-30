@@ -1,0 +1,5 @@
+# Cargo build artifacts
+**/target/
+
+# Private files e.g. aoc session keys
+**/__ignore__*

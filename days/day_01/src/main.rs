@@ -1,0 +1,55 @@
+type ParsedInput = Vec<u32>;
+type Answer = u32;
+
+fn parse_input(raw_input: &str) -> ParsedInput {
+    todo!()
+}
+
+fn run_part_one(input: ParsedInput) -> Answer {
+    todo!()
+}
+
+fn run_part_two(input: ParsedInput) -> Answer {
+    todo!()
+}
+
+fn main() {
+    let args = std::env::args().collect::<Vec<String>>();
+    let part = args.get(1).map(String::as_str).unwrap_or("1");
+
+    let raw_input = include_str!("input.txt");
+    let parsed_input = parse_input(raw_input);
+
+    let loose_start = std::time::Instant::now();
+
+    match part {
+        "1" | "one" => {
+            let result = run_part_one(parsed_input);
+            println!("Part 1: {} ({:?})", result, loose_start.elapsed());
+        }
+        "2" | "two" => {
+            let result = run_part_two(parsed_input);
+            println!("Part 2: {} ({:?})", result, loose_start.elapsed());
+        }
+        _ => {}
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const TEST_INPUT: &str = "";
+
+    #[test]
+    fn test_part_one() {
+        let result = run_part_one(parse_input(TEST_INPUT));
+        assert_eq!(result, 0)
+    }
+
+    #[test]
+    fn test_part_two() {
+        let result = run_part_two(parse_input(TEST_INPUT));
+        assert_eq!(result, 0)
+    }
+}
