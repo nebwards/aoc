@@ -15,7 +15,7 @@ fn run_part_two(input: ParsedInput) -> Answer {
 
 fn main() {
     let args = std::env::args().collect::<Vec<String>>();
-    let part = args.get(1).map(String::as_str).unwrap_or("1");
+    let part = args.get(1).map(String::as_str).unwrap_or("p1");
 
     let raw_input = include_str!("input.txt");
     let parsed_input = parse_input(raw_input);
@@ -23,15 +23,15 @@ fn main() {
     let loose_start = std::time::Instant::now();
 
     match part {
-        "1" | "one" => {
+        "p1" => {
             let result = run_part_one(parsed_input);
             println!("Part 1: {} ({:?})", result, loose_start.elapsed());
         }
-        "2" | "two" => {
+        "p2" => {
             let result = run_part_two(parsed_input);
             println!("Part 2: {} ({:?})", result, loose_start.elapsed());
         }
-        _ => {}
+        _ => unreachable!(),
     }
 }
 
